@@ -1,9 +1,9 @@
 <?php
-session_start();
-$_SESSION['session_number'] = dechex(time());
-if (preg_match('#^https?://(?:[^.]+\.)*instagram\.com/#i', $_POST['uri'])) {
+session_start();//start a session
+$_SESSION['session_number'] = dechex(time());//name the session
+if (preg_match('#^https?://(?:[^.]+\.)*instagram\.com/#i', $_POST['uri'])) {//a litthe Regex to validate the instagram url
 
-$jsonURL ="http://api.instagram.com/publicapi/oembed/?url=".$_POST['uri'];
+$jsonURL ="http://api.instagram.com/publicapi/oembed/?url=".$_POST['uri'];//connect to instagram public API
 
 $json = file_get_contents($jsonURL); 
 $data = json_decode($json);
