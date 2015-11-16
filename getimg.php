@@ -9,10 +9,10 @@ $json = file_get_contents($jsonURL);
 $data = json_decode($json);
 $tempfile = "imagetemp.php?id=".$_SESSION['session_number'];
 
-//var_dump($data->{"thumbnail_url"});
+
 $_SESSION['link'] = $data->{"thumbnail_url"};
 
-//copy($data->{"thumbnail_url"}, $tempfile);
+
 
 echo '<div id="link">'.$tempfile.'</div>';
 
